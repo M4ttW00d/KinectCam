@@ -1,0 +1,69 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 180px;
+  padding: 14px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0078d4;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.status {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 999px;
+}
+
+.status.connected    { background: #dff6dd; color: #107c10; }
+.status.disconnected { background: #fde7e9; color: #d13438; }
+
+.tilt-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #f0f2f5;
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #1a1a2a;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.tilt-btn:hover  { background: #e4eaf3; border-color: #0078d4; }
+.tilt-btn:active { background: #d0dced; }
+
+.angle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0078d4;
+  text-align: center;
+}
+
+.level-btn {
+  width: 100%;
+  padding: 7px;
+  font-size: 12px;
+  background: transparent;
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #6b7280;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.level-btn:hover { border-color: #0078d4; color: #0078d4; }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KinectCam</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <div class="preview-col">
+      <img id="preview" src="/stream" alt="Kinect feed" />
+      <div id="status-badge" class="badge disconnected">Disconnected</div>
+    </div>
+
+    <div class="controls-col">
+
+      <div class="app-title">&#9673; KinectCam</div>
+
+      <div class="card">
+        <h2>Tilt</h2>
+        <div class="tilt-stepper">
+          <button class="tilt-btn" id="tilt-up">&#9650; Up</button>
+          <span class="tilt-display" id="tilt-value">0°</span>
+          <button class="tilt-btn" id="tilt-down">&#9660; Down</button>
+        </div>
+        <div class="tilt-slider-row">
+          <span class="tilt-label">-30°</span>
+          <input id="tilt-slider" type="range" min="-30" max="30" step="1" value="0" />
+          <span class="tilt-label">+30°</span>
+        </div>
+        <button id="tilt-level" class="tilt-btn" style="margin-top:10px">Level</button>
+      </div>
+
+      <div class="card">
+        <h2>LED</h2>
+        <div class="led-grid">
+          <button class="led-btn active" data-led="green">
+            <span class="led-dot" style="background:#00c853"></span>Green
+          </button>
+          <button class="led-btn" data-led="red">
+            <span class="led-dot" style="background:#d50000"></span>Red
+          </button>
+          <button class="led-btn" data-led="yellow">
+            <span class="led-dot" style="background:#ffd600"></span>Yellow
+          </button>
+          <button class="led-btn" data-led="blink_green">
+            <span class="led-dot blink" style="background:#00c853"></span>Blink Green
+          </button>
+          <button class="led-btn" data-led="blink_red_yellow">
+            <span class="led-dot blink-ry"></span>Blink R/Y
+          </button>
+          <button class="led-btn" data-led="off">
+            <span class="led-dot" style="background:#ccc"></span>Off
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Settings</h2>
+        <label class="toggle-row">
+          <span>Mirror</span>
+          <div class="toggle-wrap">
+            <input id="mirror-toggle" type="checkbox" />
+            <span class="toggle-track"></span>
+          </div>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "KinectCam",
+  "version": "1.0",
+  "description": "Control your Kinect camera tilt from any tab",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "KinectCam Controls"
+  },
+  "host_permissions": [
+    "http://localhost:36000/*"
+  ]
+}
