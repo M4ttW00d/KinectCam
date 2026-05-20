@@ -9,12 +9,28 @@ KinectCam creates a virtual V4L2 camera device (`/dev/video36`) that any app (Te
 ## Requirements
 
 - **Hardware:** Xbox 360 Kinect (model 1414 or 1473)
-- **OS:** Ubuntu 22.04 or 24.04 LTS (other systemd-based distros likely work)
+- **OS:** Ubuntu 22.04/24.04, Fedora 38+, or Arch Linux (any systemd-based distro likely works)
 - **Kernel:** v4l2loopback support (installed automatically)
 
 ---
 
 ## Installation
+
+### Option A — download a package (recommended)
+
+Grab the latest `.deb` or `.rpm` from the [Releases](https://github.com/M4ttW00d/KinectCam/releases) page and install it:
+
+```bash
+# Debian / Ubuntu
+sudo dpkg -i kinectcam_*_amd64.deb
+
+# Fedora / RHEL
+sudo rpm -i kinectcam_*_x86_64.rpm
+```
+
+> **Arch Linux note:** v4l2loopback must be installed from the AUR first (`yay -S v4l2loopback-dkms`), then use Option B.
+
+### Option B — install from source
 
 ```bash
 git clone https://github.com/M4ttW00d/KinectCam.git
@@ -22,7 +38,7 @@ cd KinectCam
 sudo bash install.sh
 ```
 
-The installer will:
+The installer detects your package manager (apt / dnf / pacman) and will:
 
 1. Install system packages (`libfreenect`, `v4l2loopback`, `ffmpeg`, Python 3)
 2. Load the `v4l2loopback` kernel module and persist it across reboots
