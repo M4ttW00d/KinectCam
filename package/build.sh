@@ -65,7 +65,6 @@ COMMON=(
     --after-install "$SCRIPT_DIR/postinst.sh"
     --before-remove "$SCRIPT_DIR/prerm.sh"
     --after-remove  "$SCRIPT_DIR/postrm.sh"
-    .
 )
 
 # ── .deb (Debian / Ubuntu) ────────────────────────────────────────────────────
@@ -80,7 +79,8 @@ fpm "${COMMON[@]}" \
     --depends "v4l2loopback-dkms" \
     --depends "v4l2loopback-utils" \
     --depends "ffmpeg" \
-    --package "$DIST/kinectcam_${VERSION}_amd64.deb"
+    --package "$DIST/kinectcam_${VERSION}_amd64.deb" \
+    .
 
 # ── .rpm (Fedora / RHEL) ─────────────────────────────────────────────────────
 echo "Building .rpm..."
@@ -93,7 +93,8 @@ fpm "${COMMON[@]}" \
     --depends "libfreenect-devel" \
     --depends "v4l2loopback" \
     --depends "ffmpeg" \
-    --package "$DIST/kinectcam_${VERSION}_x86_64.rpm"
+    --package "$DIST/kinectcam_${VERSION}_x86_64.rpm" \
+    .
 
 echo ""
 echo "Packages built in dist/:"
